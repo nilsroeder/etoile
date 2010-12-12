@@ -1,0 +1,185 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<level id="1">
+
+	<game>
+	  <displaySpeed>1</displaySpeed>
+	  <gameSpeed>25</gameSpeed>
+	  <border>screen</border>
+	  <collision>pixel</collision>
+	  <doubleBuffering>off</doubleBuffering>
+	  <voidMap>off</voidMap>
+	  <audio>off</audio>
+	</game>
+	
+	<screen>
+	  <dimension>800 700</dimension>
+	  <gamesize>1 1</gamesize>
+	  <velocity>0 0</velocity>
+	</screen>
+	
+	 <map type="start">
+      <position>0 0</position>
+      <image>data/background.png</image>
+      <velocity>0 0</velocity>
+    </map>
+	
+	<prototype id="player">
+      <image>data/ship.png</image>
+      <animation>
+        <frames>4</frames>
+        <rows>2</rows>
+        <delay>200</delay>
+      </animation>
+    </prototype>
+
+    <prototype id="shot">
+      <image>data/shot.png</image>
+    </prototype>
+    
+    <prototype id="wall">
+      <image>data/wall.png</image>
+    </prototype>
+
+    <prototype id="alien1">
+      <image>data/alien1.png</image>
+      <animation>
+        <frames>4</frames>
+        <rows>2</rows>
+        <delay>200</delay>
+      </animation>
+    </prototype>
+    
+    <prototype id="alien2">
+      <image>data/alien2.png</image>
+      <animation>
+        <frames>4</frames>
+        <rows>2</rows>
+        <delay>200</delay>
+      </animation>
+    </prototype>
+
+    <prototype id="alien3">
+      <image>data/alien3.png</image>
+      <animation>
+        <frames>4</frames>
+        <rows>2</rows>
+        <delay>200</delay>
+      </animation>
+    </prototype>
+
+    <prototype id="drop">
+      <image>data/drop.png</image>
+    </prototype>
+	
+	<trigger type="start" lifetime="1">
+	  <event type="ship" prototype="player" name="player">
+        <mode>1 1 1 1</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>1</movement>
+    	<impact>0</impact>
+    	<damage>1</damage>
+        <vitality>1 3</vitality>
+        <velocity>0 0</velocity>
+        <sprite>
+          <position>320 620</position>
+        </sprite>
+      </event>
+      <event type="wall" prototype="wall">
+        <mode>1 0 0 3</mode>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>1</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>0 0</velocity>
+        <sprite>
+          <position>10 620</position>
+        </sprite>
+        <sprite>
+          <position>790 620</position>
+        </sprite>
+      </event>
+      <event type="alien" prototype="alien1">
+        <mode>1 1 1 2</mode>
+    	<created>1</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>2 0</velocity>
+        <sprite><position>200 140</position></sprite>
+        <sprite><position>280 140</position></sprite>
+        <sprite><position>360 140</position></sprite>
+        <sprite><position>440 140</position></sprite>
+        <sprite><position>520 140</position></sprite>
+        <sprite><position>600 140</position></sprite>
+        <sprite><position>680 140</position></sprite>
+      </event>
+      <event type="alien" prototype="alien2">
+        <mode>1 1 1 2</mode>
+    	<created>1</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>2 0</velocity>
+        <sprite><position>200 240</position></sprite>
+        <sprite><position>280 240</position></sprite>
+        <sprite><position>360 240</position></sprite>
+        <sprite><position>440 240</position></sprite>
+        <sprite><position>520 240</position></sprite>
+        <sprite><position>600 240</position></sprite>
+        <sprite><position>680 240</position></sprite>
+      </event>
+      <event type="alien" prototype="alien3">
+        <mode>1 1 1 2</mode>
+    	<created>1</created>
+    	<destroyed>0</destroyed>
+    	<movement>0</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+        <vitality>1 1</vitality>
+        <velocity>2 0</velocity>
+        <sprite><position>200 340</position></sprite>
+        <sprite><position>280 340</position></sprite>
+        <sprite><position>360 340</position></sprite>
+        <sprite><position>440 340</position></sprite>
+        <sprite><position>520 340</position></sprite>
+        <sprite><position>600 340</position></sprite>
+        <sprite><position>680 340</position></sprite>
+      </event>
+    </trigger>
+    
+    <trigger type="user" lifetime="-1">
+      <event type="shot" prototype="shot" name="shot">
+    	<mode>1 1 1 1</mode>
+    	<velocity>0 -5</velocity>
+    	<vitality>1 1</vitality>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>1</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+    	<sprite>
+    	  <position>0 0</position>
+    	</sprite>
+      </event>
+      <event type="drop" prototype="drop" name="drop">
+    	<mode>1 1 1 2</mode>
+    	<velocity>0 5</velocity>
+    	<vitality>1 1</vitality>
+    	<created>0</created>
+    	<destroyed>0</destroyed>
+    	<movement>1</movement>
+    	<impact>0</impact>
+    	<damage>0</damage>
+    	<sprite>
+    	  <position>0 0</position>
+    	</sprite>
+      </event>
+    </trigger>
+</level>
